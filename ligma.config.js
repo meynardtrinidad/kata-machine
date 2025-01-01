@@ -1,12 +1,11 @@
 module.exports = {
-    dsa: ["LinearSearchList", "BinarySearchList", "TwoCrystalBalls"],
+    dsa: ["BubbleSort", "Queue", "Stack"],
 };
 
+// TODO: Remaining Algorithms
+//
 // "DFSOnBST",
 // "LRU",
-// "LinearSearchList",
-// "BinarySearchList",
-// "TwoCrystalBalls",
 // "BubbleSort",
 // "SinglyLinkedList",
 // "DoublyLinkedList",
@@ -26,3 +25,9 @@ module.exports = {
 // "BFSGraphMatrix",
 // "Map",
 // "MinHeap",
+//
+// NOTE: Finished
+//
+// "LinearSearchList",
+// "BinarySearchList",
+// "TwoCrystalBalls",
