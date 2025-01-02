@@ -1,16 +1,13 @@
 module.exports = {
-    dsa: ["BubbleSort", "Queue", "Stack"],
+    dsa: ["ArrayList"],
 };
 
 // TODO: Remaining Algorithms
 //
 // "DFSOnBST",
 // "LRU",
-// "BubbleSort",
 // "SinglyLinkedList",
 // "DoublyLinkedList",
-// "Queue",
-// "Stack",
 // "ArrayList",
 // "MazeSolver",
 // "QuickSort",
@@ -28,6 +25,12 @@ module.exports = {
 //
 // NOTE: Finished
 //
+// Day 1:
 // "LinearSearchList",
 // "BinarySearchList",
 // "TwoCrystalBalls",
+//
+// Day 2:
+// "BubbleSort",
+// "Queue",
+// "Stack"
