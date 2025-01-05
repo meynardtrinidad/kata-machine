@@ -1,5 +1,5 @@
 module.exports = {
-    dsa: ["MazeSolver"],
+    dsa: ["QuickSort"],
 };
 
 // TODO: Remaining Algorithms
@@ -36,3 +36,6 @@ module.exports = {
 //
 // Day 3:
 // "ArrayList",
+//
+// Day 4:
+// "MazeSolver",
