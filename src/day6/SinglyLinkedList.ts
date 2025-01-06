@@ -4,6 +4,8 @@ type Node<T> = {
     prev?: Node<T>
 }
 
+// FIX:
+// - This implementation is for doubly linked list
 export default class SinglyLinkedList<T> {
     public length: number;
     head?: Node<T>
