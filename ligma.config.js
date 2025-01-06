@@ -1,5 +1,5 @@
 module.exports = {
-    dsa: ["QuickSort"],
+    dsa: ["SinglyLinkedList", "DoublyLinkedList"],
 };
 
 // TODO: Remaining Algorithms
@@ -9,7 +9,6 @@ module.exports = {
 // "SinglyLinkedList",
 // "DoublyLinkedList",
 // "MazeSolver",
-// "QuickSort",
 // "BTPreOrder",
 // "BTInOrder",
 // "BTPostOrder",
@@ -39,3 +38,6 @@ module.exports = {
 //
 // Day 4:
 // "MazeSolver",
+//
+// Day 5:
+// "QuickSort",
