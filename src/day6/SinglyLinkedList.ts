@@ -1,7 +1,6 @@
 type Node<T> = {
     value: T
     next?: Node<T>
-    prev?: Node<T>
 }
 
 // FIX:
@@ -22,7 +21,6 @@ export default class SinglyLinkedList<T> {
         }
 
         if (this.head) {
-            this.head.prev = node
             node.next = this.head
         }
 
@@ -33,8 +31,9 @@ export default class SinglyLinkedList<T> {
     insertAt(item: T, idx: number): void {
         let ctr = 0
         let curr = this.head
-        while (curr && ctr != idx) {
-            curr = curr?.next
+
+        while (curr && ctr < idx) {
+            curr = curr.next
             ctr++
         }
 
@@ -44,7 +43,6 @@ export default class SinglyLinkedList<T> {
 
         const node: Node<T> = { value: item }
         node.next = curr.next
-        node.prev = curr
 
         curr.next = node
 
@@ -58,7 +56,6 @@ export default class SinglyLinkedList<T> {
         }
 
         if (this.tail) {
-            node.prev = this.tail
             this.tail.next = node
         }
 
@@ -69,38 +66,26 @@ export default class SinglyLinkedList<T> {
     remove(item: T): T | undefined {
         let ctr = 0
         let curr = this.head
+        let prev = curr
         while (curr && ctr < this.length) {
             if (curr.value == item) {
                 break
             }
 
-            curr = curr?.next
+            prev = curr
+            curr = curr.next
             ctr++
         }
 
-        if (!curr) {
+        if (!curr || !prev) {
             return
         }
 
-        let prev = curr.prev
-        let next = curr.next
-
-        if (prev) {
-            prev.next = next
-        }
-
-        if (next) {
-            next.prev = prev
-        }
-
         if (ctr == 0) {
-            this.head = next
+            this.head = curr.next
         }
 
-        if (ctr == this.length - 1) {
-            this.tail = prev
-        }
-
+        prev.next = curr.next
         this.length--
         return curr.value
     }
@@ -119,44 +104,30 @@ export default class SinglyLinkedList<T> {
         return
     }
 
-    // FIX:
-    // - Does not take into account the removal of head / tail
     removeAt(idx: number): T | undefined {
         let ctr = 0
         let curr = this.head
+        let prev = curr
 
         while (curr && ctr < this.length) {
             if (ctr == idx) {
                 break
             }
 
+            prev = curr
             curr = curr.next
             ctr++
         }
 
-        if (!curr) {
+        if (!curr || !prev) {
             return
         }
 
-        let prev = curr.prev
-        let next = curr.next
-
-        if (next) {
-            next.prev = prev
+        if (ctr == 0) {
+            this.head = curr.next
         }
 
-        if (prev) {
-            prev.next = next
-        }
-
-        if (idx == 0) {
-            this.head = next
-        }
-
-        if (idx == this.length - 1) {
-            this.tail = prev
-        }
-
+        prev.next = curr.next
         this.length--
         return curr.value
     }
