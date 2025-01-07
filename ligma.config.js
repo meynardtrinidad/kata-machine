@@ -1,17 +1,16 @@
 module.exports = {
-    dsa: ["SinglyLinkedList", "DoublyLinkedList"],
+    dsa: [
+        "BTPreOrder",
+        "BTInOrder",
+        "BTPostOrder",
+    ],
 };
 
 // TODO: Remaining Algorithms
 //
 // "DFSOnBST",
 // "LRU",
-// "SinglyLinkedList",
-// "DoublyLinkedList",
 // "MazeSolver",
-// "BTPreOrder",
-// "BTInOrder",
-// "BTPostOrder",
 // "BTBFS",
 // "CompareBinaryTrees",
 // "DFSOnBST",
@@ -41,3 +40,9 @@ module.exports = {
 //
 // Day 5:
 // "QuickSort",
+//
+// Day 6:
+// "SinglyLinkedList",
+// "DoublyLinkedList",
+//
+// Day 7:
