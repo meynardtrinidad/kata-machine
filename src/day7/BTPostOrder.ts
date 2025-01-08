@@ -1,7 +1,16 @@
-export default function post_order_search(head: BinaryNode<number>): number[] {
-    const visitedNodes: number[] = []
+function recursive_post_order(node: BinaryNode<number> | null, path: number[]) {
+    if (!node) {
+        return
+    }
+
+    recursive_post_order(node.left, path)
+    recursive_post_order(node.right, path)
+    path.push(node.value)
+}
+
+function iterative_post_order(node: BinaryNode<number>, path: number[]) {
     const stack: BinaryNode<number>[] = []
-    let curr: BinaryNode<number> | null = head
+    let curr: BinaryNode<number> | null = node
     let prev: BinaryNode<number> | null = null
 
     while (curr != null || stack.length > 0) {
@@ -16,7 +25,7 @@ export default function post_order_search(head: BinaryNode<number>): number[] {
         }
 
         if (!curr.right || curr.right == prev) {
-            visitedNodes.push(curr.value)
+            path.push(curr.value)
             prev = curr
         } else {
             stack.push(curr)
@@ -24,5 +33,10 @@ export default function post_order_search(head: BinaryNode<number>): number[] {
         }
     }
 
+}
+export default function post_order_search(head: BinaryNode<number>): number[] {
+    const visitedNodes: number[] = []
+    // iterative_post_order(head, visitedNodes)
+    recursive_post_order(head, visitedNodes)
     return visitedNodes
 }
