@@ -1,8 +1,6 @@
 module.exports = {
     dsa: [
-        "BTPreOrder",
-        "BTInOrder",
-        "BTPostOrder",
+        "BTBFS",
     ],
 };
 
@@ -46,3 +44,9 @@ module.exports = {
 // "DoublyLinkedList",
 //
 // Day 7:
+// "BTPreOrder",
+// "BTInOrder",
+// "BTPostOrder",
+//
+// Day 8:
+// "BTBFS",
